@@ -1,0 +1,10 @@
+services:
+  discord-bot:
+    build: .
+    container_name: boo
+    command: uv run src/main.py
+    restart: always
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL}
