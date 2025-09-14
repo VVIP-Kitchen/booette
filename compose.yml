@@ -1,7 +1,7 @@
 services:
   discord-bot:
     build: .
-    container_name: boo
+    container_name: booette
     command: uv run src/main.py
     restart: always
     environment:
