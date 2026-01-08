@@ -18,7 +18,7 @@ class BotEvents(commands.Cog):
     if message.author.bot:
         return
 
-    if self.bot.user.mentioned_in(message):
+    if self.bot.user.mentioned_in(message) and not message.mention_everyone:
         reply = await generate_response(message.content)
         await message.channel.send(f"{message.author.mention} {reply}")
 
