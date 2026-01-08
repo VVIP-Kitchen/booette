@@ -15,10 +15,10 @@ class BotEvents(commands.Cog):
   async def on_message(self, message: discord.Message) -> None:
     #Log the message, print also works but we have logger module
     print(message)
-    if message.author.bot:
+    if message.author.bot and message.mention_everyone:
         return
 
-    if self.bot.user.mentioned_in(message) and not message.mention_everyone:
+    if self.bot.user.mentioned_in(message):
         reply = await generate_response(message.content)
         await message.channel.send(f"{message.author.mention} {reply}")
 
