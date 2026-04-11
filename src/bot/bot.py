@@ -12,7 +12,8 @@ class DiscordBot(commands.Bot):
     intents.members = True
     intents.presences = True
     intents.message_content = True
-    super().__init__(command_prefix=PREFIX, intents=intents)
+    allowed_mentions=discord.AllowedMentions(everyone=False)
+    super().__init__(command_prefix=PREFIX, intents=intents, allowed_mentions=allowed_mentions)
 
   async def setup_hook(self) -> None:
     """
