@@ -14,7 +14,6 @@ class BotEvents(commands.Cog):
   @commands.Cog.listener()
   async def on_message(self, message: discord.Message) -> None:
     #Log the message, print also works but we have logger module
-    print(message)
     if message.author.bot or message.mention_everyone:
         return
 
